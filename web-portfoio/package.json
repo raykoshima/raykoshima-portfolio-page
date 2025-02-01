@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "NekoSakuraLucia (Cxllme Neko)",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
