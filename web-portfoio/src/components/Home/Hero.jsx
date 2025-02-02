@@ -6,22 +6,6 @@ import { NavLink } from 'react-router';
 const Hero = () => {
   return (
     <div className="min-h-screen relative overflow-hidden flex flex-col items-center justify-center" id="home">
-      {/* Background Animation - ปรับปรุง animation ให้ดูนุ่มนวลขึ้น */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.05, 1],
-            rotate: [0, 2, 0],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-gradient-to-br from-indigo-50/30 via-purple-50/20 to-blue-50/30 backdrop-blur-lg"
-        />
-      </div>
-
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="text-center">
           <motion.div
