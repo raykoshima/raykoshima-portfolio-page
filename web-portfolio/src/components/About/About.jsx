@@ -106,7 +106,7 @@ const About = () => {
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
                       viewport={{ once: true }}
-                      transition={{ duration: 1, ease: "easeOut" }}
+                      transition={{ duration: 1, ease: 'easeOut' }}
                       className="h-full bg-gradient-to-r from-indigo-600 to-purple-600"
                     />
                   </div>

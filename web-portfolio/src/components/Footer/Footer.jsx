@@ -13,10 +13,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: FiGithub, href: "https://github.com", label: "GitHub" },
-    { icon: FiLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: FiMail, href: "https://gmail.com", label: "Email" },
-    { icon: FiFacebook, href: "https://facebook.com", label: "Facebook" },
+    { icon: FiGithub, href: 'https://github.com', label: 'GitHub' },
+    { icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: FiMail, href: 'https://gmail.com', label: 'Email' },
+    { icon: FiFacebook, href: 'https://facebook.com', label: 'Facebook' },
   ];
 
   return (
@@ -91,7 +91,7 @@ const Footer = () => {
           <p className="text-center text-sm text-gray-600 dark:text-gray-400">
             © {currentYear} Your Name. All rights reserved.
             <br/>
-            Template Made by: <NavLink to={"https://github.com/NekoSakuraLucia/Web-Portfolio-React"} target='_blank' rel="noopener noreferrer" className="underline underline-offset-2 decoration-blue-500">NekoSakuraLucia</NavLink>
+            Template Made by: <NavLink to={'https://github.com/NekoSakuraLucia/Web-Portfolio-React'} target='_blank' rel="noopener noreferrer" className="underline underline-offset-2 decoration-blue-500">NekoSakuraLucia</NavLink>
           </p>
         </div>
       </div>

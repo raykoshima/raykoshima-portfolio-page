@@ -11,11 +11,11 @@ function App({ children }) {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
 App.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default App
+export default App;

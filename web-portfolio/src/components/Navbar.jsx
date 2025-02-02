@@ -115,7 +115,7 @@ const Navbar = () => {
           height: isOpen ? 'auto' : 0,
           opacity: isOpen ? 1 : 0
         }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
         className="md:hidden overflow-hidden bg-white/90 dark:bg-gray-900/90 backdrop-blur-md"
       >
         <div className="px-6 py-4 space-y-3">

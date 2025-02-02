@@ -11,7 +11,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <h2 className="inline-block text-sm font-semibold text-indigo-600 tracking-wide uppercase bg-indigo-50/80 px-6 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-300">
               ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม
@@ -81,9 +81,9 @@ const Hero = () => {
             className="mt-12 flex justify-center space-x-8"
           >
             {[
-              { Icon: FiGithub, href: "https://github.com", label: "GitHub" },
-              { Icon: FiLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
-              { Icon: FiMail, href: "https://gmail.com", label: "Email" }
+              { Icon: FiGithub, href: 'https://github.com', label: 'GitHub' },
+              { Icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+              { Icon: FiMail, href: 'https://gmail.com', label: 'Email' }
             ].map(({ Icon, href, label }) => (
               <motion.a
                 key={label}

@@ -1,13 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route } from 'react-router'
-import { ThemeProvider } from './context/ThemeContext'
-import App from './App'
-import './index.css'
-import Hero from './components/Home/Hero'
-import About from './components/About/About'
-import Projects from './components/Projects/Projects'
-import Contact from './components/Contact/Contact'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import { ThemeProvider } from './context/ThemeContext';
+import App from './App';
+import './index.css';
+import Hero from './components/Home/Hero';
+import About from './components/About/About';
+import Projects from './components/Projects/Projects';
+import Contact from './components/Contact/Contact';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -24,4 +24,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </Router>
     </ThemeProvider>
   </React.StrictMode>
-)
+);

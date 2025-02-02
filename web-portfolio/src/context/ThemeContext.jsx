@@ -30,6 +30,6 @@ export const ThemeProvider = ({ children }) => {
 
 ThemeProvider.propTypes = {
     children: PropsType.node.isRequired,
-}
+};
 
 export default ThemeContext;
