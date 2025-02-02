@@ -1,151 +1,184 @@
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiFacebook } from 'react-icons/fi';
+import { useState } from 'react';
+import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
 
 const Contact = () => {
-  const contactInfo = [
-    { icon: FiMail, text: 'your@email.com', href: 'https://gmail.com' },
-    { icon: FiPhone, text: '123-456-7890', href: 'tel:1234567890' },
-    { icon: FiMapPin, text: 'กรุงเทพมหานคร, ประเทศไทย', href: '#' },
-  ];
+  // สถานะสำหรับฟอร์มติดต่อ
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
-  const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com', label: 'GitHub' },
-    { icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FiFacebook, href: 'https://facebook.com', label: 'Facebook' },
-  ];
-
-  const handleSubmit = (e) => {
+  // ฟังก์ชันจัดการการส่งฟอร์ม
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // จัดการการส่งฟอร์ม
+    setIsSubmitting(true);
+    
+    // จำลองการส่งข้อมูล
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
+  // ข้อมูลการติดต่อ
+  const contactInfo = [
+    {
+      icon: FiMail,
+      label: 'อีเมล',
+      value: 'your.email@example.com',
+      href: 'mailto:your.email@example.com'
+    },
+    {
+      icon: FiPhone,
+      label: 'เบอร์โทรศัพท์',
+      value: '(+66) 99-999-9999',
+      href: 'tel:+66999999999'
+    },
+    {
+      icon: FiMapPin,
+      label: 'ที่อยู่',
+      value: 'กรุงเทพมหานคร, ประเทศไทย',
+      href: 'https://goo.gl/maps/yourLocation'
+    }
+  ];
+
   return (
-    <section className="min-h-screen py-28" id="contact">
+    <section className="min-h-screen py-28 bg-gray-50 dark:bg-neutral-900" id="contact">
       <div className="max-w-7xl mx-auto px-6">
+        {/* หัวข้อส่วน */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl mb-4">
-            ติดต่อผม
+          <h2 className="text-4xl font-bold mb-6">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">
+              ติดต่อผม
+            </span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            สนใจร่วมงานหรือมีคำถาม? ติดต่อผมได้ผ่านช่องทางด้านล่างหรือส่งข้อความถึงผมโดยตรง
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            สนใจร่วมงานหรือมีข้อสงสัย? ติดต่อผมได้เลย ยินดีให้คำปรึกษาและพูดคุยเกี่ยวกับโปรเจกต์ของคุณ
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Form */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* ข้อมูลการติดต่อ */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8"
+            className="space-y-8"
+          >
+            {contactInfo.map(({ icon: Icon, label, value, href }) => (
+              <motion.a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center p-6 bg-white dark:bg-neutral-800 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="p-4 bg-indigo-50 dark:bg-indigo-900/30 rounded-full">
+                  <Icon className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                </div>
+                <div className="ml-6">
+                  <p className="text-sm font-medium text-gray-600 dark:text-gray-400">{label}</p>
+                  <p className="text-base font-semibold text-gray-900 dark:text-white">{value}</p>
+                </div>
+              </motion.a>
+            ))}
+          </motion.div>
+
+          {/* ฟอร์มติดต่อ */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   ชื่อ
                 </label>
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-neutral-700 border border-gray-200 dark:border-neutral-600 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 outline-none transition-all dark:text-white"
-                  placeholder="กรุณาใส่ชื่อของคุณ"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent bg-white dark:bg-neutral-800 text-gray-900 dark:text-white"
+                  placeholder="กรุณากรอกชื่อของคุณ"
                 />
               </div>
+
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   อีเมล
                 </label>
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-neutral-700 border border-gray-200 dark:border-neutral-600 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 outline-none transition-all dark:text-white"
-                  placeholder="example@email.com"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent bg-white dark:bg-neutral-800 text-gray-900 dark:text-white"
+                  placeholder="example@domain.com"
                 />
               </div>
+
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   ข้อความ
                 </label>
                 <textarea
                   id="message"
-                  name="message"
+                  value={formData.message}
+                  onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-neutral-700 border border-gray-200 dark:border-neutral-600 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 outline-none transition-all dark:text-white resize-none"
-                  placeholder="กรุณาใส่ข้อความของคุณ"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent bg-white dark:bg-neutral-800 text-gray-900 dark:text-white resize-none"
+                  placeholder="กรุณากรอกข้อความที่ต้องการส่ง"
                 />
               </div>
+
               <motion.button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full px-6 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium flex items-center justify-center space-x-2 hover:shadow-lg transition-shadow disabled:opacity-50"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                type="submit"
-                className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg px-6 py-3 font-medium hover:opacity-90 transition-opacity"
               >
-                ส่งข้อความ
+                <FiSend className="w-5 h-5" />
+                <span>{isSubmitting ? 'กำลังส่ง...' : 'ส่งข้อความ'}</span>
               </motion.button>
+
+              {/* แสดงผลการส่งข้อความ */}
+              {submitStatus && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-lg ${
+                    submitStatus === 'success'
+                      ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300'
+                      : 'bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                  }`}
+                >
+                  {submitStatus === 'success'
+                    ? 'ส่งข้อความเรียบร้อยแล้ว ขอบคุณที่ติดต่อ'
+                    : 'เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง'}
+                </motion.div>
+              )}
             </form>
-          </motion.div>
-
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="space-y-8"
-          >
-            {/* Contact Details */}
-            <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-                ข้อมูลการติดต่อ
-              </h3>
-              <div className="space-y-4">
-                {contactInfo.map(({ icon: Icon, text, href }) => (
-                  <motion.a
-                    key={text}
-                    href={href}
-                    className="flex items-center space-x-4 text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                    whileHover={{ x: 4 }}
-                  >
-                    <Icon size={20} />
-                    <span>{text}</span>
-                  </motion.a>
-                ))}
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-                โซเชียลมีเดีย
-              </h3>
-              <div className="flex space-x-4">
-                {socialLinks.map(({ icon: Icon, href, label }) => (
-                  <motion.a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-gray-50 dark:bg-neutral-700 rounded-lg text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-neutral-600 transition-colors"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Icon size={24} />
-                  </motion.a>
-                ))}
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
