@@ -4,7 +4,46 @@ import { motion } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../context/useTheme';
+import PropTypes from 'prop-types';
 
+const NavItem = ({ to, children }) => {
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) => `
+        relative text-sm uppercase tracking-wider font-medium
+        ${isActive
+          ? 'text-indigo-600 dark:text-indigo-400'
+          : 'text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
+        } transition-colors
+      `}
+    >
+      {({ isActive }) => (
+        <motion.span
+          className="relative py-2"
+          whileHover={{ scale: 1.05 }}
+        >
+          {children}
+          {isActive && (
+            <motion.span
+              layoutId="underline"
+              className="absolute left-0 right-0 bottom-0 h-0.5 bg-indigo-600"
+              initial={false}
+              transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+            />
+          )}
+        </motion.span>
+      )}
+    </NavLink>
+  );
+};
+
+NavItem.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
+// ส่วนคอมโพเนนต์จริง (Navbar)
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -27,8 +66,8 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 
-      ${scrolled 
-        ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg' 
+      ${scrolled
+        ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg'
         : 'bg-transparent'
       }`}
     >
@@ -45,32 +84,9 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <NavLink
-                key={item.title}
-                to={item.to}
-                className={({ isActive }) => `
-                  relative text-sm uppercase tracking-wider font-medium
-                  ${isActive 
-                    ? 'text-indigo-600 dark:text-indigo-400' 
-                    : 'text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
-                  } transition-colors
-                `}
-              >
-                {({ isActive }) => (
-                  <motion.span
-                    className="relative"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {item.title}
-                    <motion.span
-                      className={`absolute -bottom-1 left-0 h-0.5 bg-indigo-600
-                        ${isActive ? 'w-full' : 'w-0'}`}
-                      whileHover={{ width: '100%' }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </motion.span>
-                )}
-              </NavLink>
+              <NavItem key={item.title} to={item.to}>
+                {item.title}
+              </NavItem>
             ))}
 
             {/* Theme Toggle Button */}
@@ -125,8 +141,8 @@ const Navbar = () => {
               to={item.to}
               className={({ isActive }) => `
                 block py-2 text-sm font-medium rounded-lg px-4
-                ${isActive 
-                  ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-900/50' 
+                ${isActive
+                  ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-900/50'
                   : 'text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
                 }
               `}
