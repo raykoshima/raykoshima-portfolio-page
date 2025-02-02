@@ -1,34 +1,35 @@
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import { TypeAnimation } from 'react-type-animation';
+import { NavLink } from 'react-router';
 
 const Hero = () => {
   return (
-    <div className="min-h-screen relative overflow-hidden flex items-center justify-center" id="home">
-      {/* Background Animation */}
+    <div className="min-h-screen relative overflow-hidden flex flex-col items-center justify-center" id="home">
+      {/* Background Animation - ปรับปรุง animation ให้ดูนุ่มนวลขึ้น */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 5, 0],
+            scale: [1, 1.05, 1],
+            rotate: [0, 2, 0],
           }}
           transition={{
-            duration: 20,
+            duration: 30,
             repeat: Infinity,
-            ease: "linear"
+            ease: "easeInOut"
           }}
-          className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-gradient-to-br from-indigo-50/50 via-transparent to-purple-50/50 backdrop-blur-3xl"
+          className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-gradient-to-br from-indigo-50/30 via-purple-50/20 to-blue-50/30 backdrop-blur-lg"
         />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h2 className="inline-block text-sm font-semibold text-indigo-600 tracking-wide uppercase bg-indigo-50 px-4 py-1 rounded-full">
+            <h2 className="inline-block text-sm font-semibold text-indigo-600 tracking-wide uppercase bg-indigo-50/80 px-6 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-300">
               ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม
             </h2>
           </motion.div>
@@ -72,8 +73,28 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.8 }}
+            className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <NavLink
+              to="/contact"
+              className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+            >
+              ติดต่อ
+            </NavLink>
+            <NavLink
+              to="/projects"
+              className="px-8 py-3 border-2 border-indigo-600 text-indigo-600 rounded-full font-medium hover:bg-indigo-50 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+            >
+              ดูผลงาน
+            </NavLink>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="mt-8 flex justify-center space-x-6"
+            className="mt-12 flex justify-center space-x-8"
           >
             {[
               { Icon: FiGithub, href: "https://github.com", label: "GitHub" },
@@ -85,11 +106,11 @@ const Hero = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 text-gray-600 hover:text-indigo-600 transition-colors rounded-full hover:bg-indigo-50"
+                className="p-4 text-gray-600 hover:text-indigo-600 transition-all duration-300 rounded-full hover:bg-indigo-50 hover:shadow-md"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Icon size={24} />
+                <Icon size={28} />
               </motion.a>
             ))}
           </motion.div>
