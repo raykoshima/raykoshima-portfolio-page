@@ -4,7 +4,7 @@ import { NavLink } from 'react-router';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   const menuItems = [
     { title: 'หน้าแรก', to: '/' },
     { title: 'เกี่ยวกับ', to: '/about' },
@@ -34,8 +34,7 @@ const Footer = () => {
               Your Name
             </motion.div>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              สร้างสรรค์เว็บไซต์ด้วยความใส่ใจในทุกรายละเอียด 
-              เพื่อประสบการณ์ที่ดีที่สุดสำหรับผู้ใช้งาน
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             </p>
           </div>
 
@@ -91,6 +90,8 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-neutral-800">
           <p className="text-center text-sm text-gray-600 dark:text-gray-400">
             © {currentYear} Your Name. All rights reserved.
+            <br/>
+            Template Made by: <NavLink to={"https://github.com/NekoSakuraLucia/Web-Portfolio-React"} target='_blank' rel="noopener noreferrer" className="underline underline-offset-2 decoration-blue-500">NekoSakuraLucia</NavLink>
           </p>
         </div>
       </div>

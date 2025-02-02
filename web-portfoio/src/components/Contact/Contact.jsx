@@ -63,11 +63,11 @@ const Contact = () => {
         >
           <h2 className="text-4xl font-bold mb-6">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">
-              ติดต่อผม
+              ติดต่อฉัน
             </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            สนใจร่วมงานหรือมีข้อสงสัย? ติดต่อผมได้เลย ยินดีให้คำปรึกษาและพูดคุยเกี่ยวกับโปรเจกต์ของคุณ
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
           </p>
         </motion.div>
 

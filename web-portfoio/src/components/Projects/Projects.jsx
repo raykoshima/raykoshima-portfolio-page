@@ -10,24 +10,24 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "โปรเจกต์ E-commerce",
-      description: "เว็บไซต์ขายสินค้าออนไลน์ที่พัฒนาด้วย React และ Node.js รองรับการชำระเงินและระบบจัดการสินค้า",
+      title: "Lorem ipsum 1",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
       image: "https://placehold.co/600x400/5046e5/ffffff?text=E-commerce+Project",
       tags: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
       github: "https://github.com",
       demo: "https://demo-link.com",
     },
     {
-      title: "แอพพลิเคชันจัดการงาน",
-      description: "แอพพลิเคชันจัดการงานและติดตามความคืบหน้า พร้อมระบบแจ้งเตือนและการทำงานร่วมกัน",
+      title: "Lorem ipsum 2",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
       image: "https://placehold.co/600x400/4338ca/ffffff?text=Task+Management",
       tags: ["React", "Firebase", "Redux", "Material-UI"],
       github: "https://github.com",
       demo: "https://demo-link.com",
     },
     {
-      title: "เว็บไซต์ท่องเที่ยว",
-      description: "เว็บไซต์แนะนำสถานที่ท่องเที่ยว พร้อมระบบค้นหาและรีวิว รองรับการใช้งานในทุกอุปกรณ์",
+      title: "Lorem ipsum 3",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
       image: "https://placehold.co/600x400/3730a3/ffffff?text=Travel+Website",
       tags: ["Next.js", "Prisma", "PostgreSQL", "Framer Motion"],
       github: "https://github.com",
@@ -52,11 +52,11 @@ const Projects = () => {
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl mb-6">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">
-              ผลงานของผม
+              ผลงานของฉัน
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            นี่คือตัวอย่างผลงานที่ผมภูมิใจนำเสนอ แต่ละโปรเจกต์สะท้อนถึงความตั้งใจและความเชี่ยวชาญของผม
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
           </p>
         </motion.div>
 

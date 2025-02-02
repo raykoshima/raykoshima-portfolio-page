@@ -51,7 +51,7 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-6 max-w-2xl mx-auto text-lg text-gray-600"
           >
-            นักพัฒนาเว็บไซต์ที่หลงใหลในการสร้างสรรค์ประสบการณ์ดิจิทัลที่สวยงามและใช้งานง่าย
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
           </motion.p>
 
           <motion.div
