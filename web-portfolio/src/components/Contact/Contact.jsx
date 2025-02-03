@@ -154,12 +154,21 @@ const Contact = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium flex items-center justify-center space-x-2 hover:shadow-lg transition-shadow disabled:opacity-50"
+                className="group relative w-full px-6 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 
+                         text-white rounded-lg font-medium overflow-hidden
+                         before:absolute before:inset-0
+                         before:bg-[length:200%_100%] before:animate-wave-gradient
+                         before:bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.2)_50%,transparent_100%)]
+                         hover:shadow-[0_0_25px_-5px_rgba(99,102,241,0.5)]
+                         disabled:opacity-50 disabled:before:animate-none disabled:hover:shadow-none
+                         transition-shadow duration-300"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <FiSend className="w-5 h-5" />
-                <span>{isSubmitting ? 'กำลังส่ง...' : 'ส่งข้อความ'}</span>
+                <div className="relative flex items-center justify-center space-x-2">
+                  <FiSend className="w-5 h-5" />
+                  <span>{isSubmitting ? 'กำลังส่ง...' : 'ส่งข้อความ'}</span>
+                </div>
               </motion.button>
 
               {/* แสดงผลการส่งข้อความ */}
