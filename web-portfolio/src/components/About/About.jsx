@@ -4,12 +4,12 @@ import { FiBookOpen, FiCode, FiAward } from 'react-icons/fi';
 const About = () => {
   // ข้อมูลทักษะและความสามารถ
   const skills = [
-    { name: 'React', level: 90 },
-    { name: 'JavaScript', level: 85 },
-    { name: 'TypeScript', level: 80 },
+    { name: 'Python', level: 80 },
+    { name: 'JavaScript', level: 75 },
+    { name: 'TypeScript', level: 75 },
     { name: 'Node.js', level: 75 },
-    { name: 'HTML/CSS', level: 95 },
-    { name: 'Tailwind CSS', level: 90 },
+    { name: 'HTML/CSS', level: 80 },
+    { name: 'Minecraft', level: 99 },
   ];
 
   // ข้อมูลประสบการณ์
@@ -17,17 +17,17 @@ const About = () => {
     {
       icon: FiCode,
       title: 'ประสบการณ์การพัฒนา',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+      description: 'เริ่มต้นด้วย html php css และ hello world ตอนนี้ทำงานเป็น backend developer เขียน Django REST API'
     },
     {
       icon: FiBookOpen,
       title: 'การศึกษา',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+      description: 'วิทยาลัยเทคนิคขอนแก่น คณะสารสนเทศ ตอนนี้มหาวิทยาลัยศรีปทุมวิทยาเขตขอนแก่น คณะเทคโนโลยีสารสนเทศ'
     },
     {
       icon: FiAward,
       title: 'รางวัลและความสำเร็จ',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+      description: 'แข่งทักษะวิชาชีพอันดับ 1 จังหวัดและได้อันดับ 4 ภาคตะวันออกเฉียงเหนือ'
     }
   ];
 
@@ -47,7 +47,7 @@ const About = () => {
             </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            esay person , talk hard
           </p>
         </motion.div>
 
@@ -143,11 +143,11 @@ const About = () => {
             </h3>
             <div className="prose prose-indigo dark:prose-invert">
               <p className="text-gray-600 dark:text-gray-300">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                อยากเก็บเงินเยอะๆ 555 classic
               </p>
-              <p className="text-gray-600 dark:text-gray-300 mt-4">
+              {/* <p className="text-gray-600 dark:text-gray-300 mt-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              </p>
+              </p> */}
             </div>
           </div>
         </motion.div>
