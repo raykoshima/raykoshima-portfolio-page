@@ -90,7 +90,7 @@ const Navbar = () => {
             ))}
 
             {/* Theme Toggle Button */}
-            <motion.button
+            {/* <motion.button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300
                 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -98,7 +98,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
             >
               {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
-            </motion.button>
+            </motion.button> */}
           </div>
 
           {/* Mobile Menu Button */}
