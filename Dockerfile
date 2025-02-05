@@ -11,7 +11,7 @@ COPY package.json bun.lock ./
 RUN bun install
 
 # Copy the rest of the application files
-COPY . .
+COPY /web-portfolio .
 
 # Build the Vite project
 RUN bun run build
