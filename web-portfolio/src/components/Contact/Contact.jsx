@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
+import { FaDiscord } from 'react-icons/fa';
 
 const Contact = () => {
   // สถานะสำหรับฟอร์มติดต่อ
@@ -34,21 +35,27 @@ const Contact = () => {
     {
       icon: FiMail,
       label: 'อีเมล',
-      value: 'your.email@example.com',
-      href: 'mailto:your.email@example.com'
+      value: 'ray@raykoshima.xyz',
+      href: 'mailto:ray@raykoshima.xyz'
     },
-    {
-      icon: FiPhone,
-      label: 'เบอร์โทรศัพท์',
-      value: '(+66) 99-999-9999',
-      href: 'tel:+66999999999'
-    },
+    // {
+    //   icon: FiPhone,
+    //   label: 'เบอร์โทรศัพท์',
+    //   value: '(+66) 99-999-9999',
+    //   href: 'tel:+66999999999'
+    // },
     {
       icon: FiMapPin,
       label: 'ที่อยู่',
-      value: 'กรุงเทพมหานคร, ประเทศไทย',
-      href: 'https://goo.gl/maps/yourLocation'
-    }
+      value: 'ขอนแก่น, ประเทศไทย',
+      href: 'https://maps.app.goo.gl/6bB3sSMQp1QsgHxb7'
+    },
+    {
+      icon: FaDiscord,
+      label: 'discord',
+      value: 'raykoshima',
+      href: 'https://discord.com/users/296983929456427008'
+    },
   ];
 
   return (
@@ -67,7 +74,7 @@ const Contact = () => {
             </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          feel free to contact
           </p>
         </motion.div>
 
@@ -183,7 +190,8 @@ const Contact = () => {
                   }`}
                 >
                   {submitStatus === 'success'
-                    ? 'ส่งข้อความเรียบร้อยแล้ว ขอบคุณที่ติดต่อ'
+                    // ? 'ส่งข้อความเรียบร้อยแล้ว ขอบคุณที่ติดต่อ'
+                    ? 'message sent, if it really work'
                     : 'เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง'}
                 </motion.div>
               )}
