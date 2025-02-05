@@ -6,33 +6,35 @@ const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const categories = ['all', 'web', 'mobile', 'design'];
+  // const categories = ['all', 'web', 'mobile', 'design'];
+  const categories = ['all', 'app' , 'web'];
 
   const projects = [
     {
-      title: 'Lorem ipsum 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
-      image: 'https://placehold.co/600x400/5046e5/ffffff?text=E-commerce+Project',
-      tags: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
-      github: 'https://github.com',
-      demo: 'https://demo-link.com',
+      title: 'Discord Attachments file to link',
+      description: 'bot discord แปลงไฟล์ข้อความเป็น link โดยใช้ api จาก mclo.gs',
+      image: 'https://raykoshima.github.io/assets/png/discord-to-txt-image.png',
+      tags: ['Node.js', 'API', 'Javascript'],
+      github: 'https://github.com/raykoshima/discord-txt-to-mclogs-link-public-code',
+      // demo: 'https://demo-link.com',
+      category: 'app',
     },
     {
-      title: 'Lorem ipsum 2',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
-      image: 'https://placehold.co/600x400/4338ca/ffffff?text=Task+Management',
-      tags: ['React', 'Firebase', 'Redux', 'Material-UI'],
-      github: 'https://github.com',
-      demo: 'https://demo-link.com',
+      title: 'Next JS Project',
+      description: 'สมัยหัดเขียนทั้ง frontend และ backend แล้วพบว่าตัวเองถนัด backend มากกว่า 555 โปรเจคปีที่แล้ว',
+      image: 'https://raykoshima.github.io/assets/png/nextjs-broke.png',
+      tags: ['Next.JS', 'Firebase', 'TypeScript'],
+      github: 'https://github.com/raykoshima/nextjs-myfirstapp',
+      category: 'web',
     },
-    {
-      title: 'Lorem ipsum 3',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
-      image: 'https://placehold.co/600x400/3730a3/ffffff?text=Travel+Website',
-      tags: ['Next.js', 'Prisma', 'PostgreSQL', 'Framer Motion'],
-      github: 'https://github.com',
-      demo: 'https://demo-link.com',
-    },
+    // {
+    //   title: 'Lorem ipsum 3',
+    //   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+    //   image: 'https://placehold.co/600x400/3730a3/ffffff?text=Travel+Website',
+    //   tags: ['Next.js', 'Prisma', 'PostgreSQL', 'Framer Motion'],
+    //   github: 'https://github.com',
+    //   demo: 'https://demo-link.com',
+    // },
   ];
 
   const filteredProjects = selectedCategory === 'all' 
@@ -56,7 +58,7 @@ const Projects = () => {
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          my project when free
           </p>
         </motion.div>
 
@@ -124,7 +126,7 @@ const Projects = () => {
                         >
                           <FiGithub size={20} />
                         </motion.a>
-                        <motion.a
+                        {/* <motion.a
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -134,7 +136,7 @@ const Projects = () => {
                           onClick={(e) => e.stopPropagation()}
                         >
                           <FiExternalLink size={20} />
-                        </motion.a>
+                        </motion.a> */}
                       </div>
                     </div>
                   </div>
