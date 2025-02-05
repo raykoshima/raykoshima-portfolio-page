@@ -5,7 +5,7 @@ FROM oven/bun:latest AS builder
 WORKDIR /app
 
 # Copy the necessary files from the web-portfolio directory
-COPY web-portfolio/package.json web-portfolio/bun.lockb ./
+COPY web-portfolio/package.json web-portfolio/bun.lock ./
 
 # Install dependencies
 RUN bun install
