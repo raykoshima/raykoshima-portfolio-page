@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiFacebook } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiFacebook, FiYoutube } from 'react-icons/fi';
 import { NavLink } from 'react-router';
 
 const Footer = () => {
@@ -13,10 +13,11 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com', label: 'GitHub' },
-    { icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FiMail, href: 'https://gmail.com', label: 'Email' },
-    { icon: FiFacebook, href: 'https://facebook.com', label: 'Facebook' },
+    { icon: FiGithub, href: 'https://github.com/raykoshima', label: 'GitHub' },
+    // { icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: FiMail, href: 'mailto:ray@raykoshima.xyz', label: 'Email' },
+    { icon: FiFacebook, href: 'https://www.facebook.com/thailand40000', label: 'Facebook' },
+    { icon: FiYoutube, href: 'https://www.youtube.com/@RaykoShima', label: 'Youtube' },
   ];
 
   return (
@@ -31,10 +32,10 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent"
             >
-              Your Name
+              MrRayTH
             </motion.div>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              From IT Support to someone that love to play game / scipting / coding / logic / data structures / data processing OR DPRK-POP listener
             </p>
           </div>
 
@@ -60,12 +61,12 @@ const Footer = () => {
 
           {/* Contact and Social */}
           <div>
-            <h3 className="text-gray-900 dark:text-white font-semibold mb-4">ติดต่อ</h3>
+            <h3 className="text-gray-900 dark:text-white font-semibold mb-4">contact</h3>
             <div className="space-y-4">
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                อีเมล: your@email.com<br />
-                โทร: 123-456-789<br />
-                ที่อยู่: กรุงเทพมหานคร, ประเทศไทย
+                email: ray@raykoshima.xyz<br />
+                {/* โทร: 123-456-789<br /> */}
+                lived at: Khon Kaen, Thailand
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -89,7 +90,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-neutral-800">
           <p className="text-center text-sm text-gray-600 dark:text-gray-400">
-            © {currentYear} Your Name. All rights reserved.
+            © 2024 - {currentYear} raykoshima. All rights reserved.
             <br/>
             Template Made by: <NavLink to={'https://github.com/NekoSakuraLucia/Web-Portfolio-React'} target='_blank' rel="noopener noreferrer" className="underline underline-offset-2 decoration-blue-500">NekoSakuraLucia</NavLink>
           </p>
