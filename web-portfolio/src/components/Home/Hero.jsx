@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FiGithub, FiFacebook, FiMail , FiYoutube } from 'react-icons/fi';
 import { TypeAnimation } from 'react-type-animation';
 import { NavLink } from 'react-router';
 
@@ -14,7 +14,8 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <h2 className="inline-block text-sm font-semibold text-indigo-600 tracking-wide uppercase bg-indigo-50/80 px-6 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-300">
-              ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม
+              {/* ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม */}
+              welcome to my portfolio
             </h2>
           </motion.div>
           
@@ -25,16 +26,23 @@ const Hero = () => {
             className="mt-6"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-              <span className="block text-gray-900 dark:text-gray-100">สวัสดี, ผมคือ</span>
+              <span className="block text-gray-900 dark:text-gray-100">Hello, I'm</span>
               <span className="block mt-2">
                 <TypeAnimation
                   sequence={[
-                    'นักพัฒนาเว็บ',
+                    'Coder',
                     1000,
-                    'Frontend Developer',
+                    'Backend Developer',
                     1000,
-                    'Your Name',
+                    // 'Minecraft Server Admin',
+                    // 1000,
+                    'raykoshima',
+                    250,
+                    '',
+                    100,
+                    'Ray',
                     2000,
+                    'Coder',
                   ]}
                   wrapper="span"
                   speed={50}
@@ -51,7 +59,8 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-6 max-w-2xl mx-auto text-lg text-gray-600"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod */}
+            ถ้าคุณมาหา developer ล่ะก็, คุณเกือบมาถูกที่ล่ะ ขอผมเก็บประสบการณ์ก่อน
           </motion.p>
 
           <motion.div
@@ -81,9 +90,11 @@ const Hero = () => {
             className="mt-12 flex justify-center space-x-8"
           >
             {[
-              { Icon: FiGithub, href: 'https://github.com', label: 'GitHub' },
-              { Icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-              { Icon: FiMail, href: 'https://gmail.com', label: 'Email' }
+              { Icon: FiGithub, href: 'https://github.com/raykoshima', label: 'GitHub' },
+              // { Icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+              { Icon: FiMail, href: 'mailto:ray@raykoshima.xyz', label: 'Email' },
+              { Icon: FiFacebook, href: 'https://www.facebook.com/thailand40000', label: 'Facebook' },
+              { Icon: FiYoutube, href: 'https://www.youtube.com/@RaykoShima', label: 'Youtube' },
             ].map(({ Icon, href, label }) => (
               <motion.a
                 key={label}
